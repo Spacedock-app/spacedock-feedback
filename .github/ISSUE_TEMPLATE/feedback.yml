@@ -1,0 +1,38 @@
+name: Question or feedback
+description: A question, an impression, something that was hard to do, or an idea
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reports and attachments in this repository are **public**. Do not include full backups, private URLs, tokens or personal information. For anything private, write to spacedock.project@gmail.com.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this?
+      options:
+        - A question
+        - Something that was confusing or hard
+        - An idea
+        - Something I liked
+    validations:
+      required: true
+  - type: textarea
+    id: text
+    attributes:
+      label: Tell us
+      description: What were you trying to do? What did you expect to find?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: SpaceDock version (optional)
+      description: "`brave://extensions` → SpaceDock"
+  - type: checkboxes
+    id: private-safe
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked that this contains no private URLs, backups, tokens or personal information.
+          required: true

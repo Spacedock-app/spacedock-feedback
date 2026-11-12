@@ -1,0 +1,70 @@
+name: Report a bug
+description: Something in SpaceDock does not work as it should
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reports and attachments in this repository are **public**. Do not include full backups, private URLs, tokens, personal information or unredacted screenshots. For anything private, write to spacedock.project@gmail.com.
+  - type: input
+    id: version
+    attributes:
+      label: SpaceDock version
+      description: Open `brave://extensions` (Chrome: `chrome://extensions`) and read the number next to SpaceDock.
+      placeholder: "0.6.57"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser, its version and your system
+      placeholder: "Brave 1.x on Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What did you do?
+      description: Steps, in order. Use harmless example pages if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: repeats
+    attributes:
+      label: Does it happen every time?
+      options:
+        - Every time
+        - Sometimes
+        - Only once
+        - Not sure
+  - type: dropdown
+    id: data-loss
+    attributes:
+      label: Did a tab, Group or Space go missing?
+      options:
+        - No
+        - "Yes, and Trash / Undo / History brought it back"
+        - "Yes, and I could not get it back"
+  - type: textarea
+    id: integrity
+    attributes:
+      label: Check data integrity (optional)
+      description: "Tools → Backup & import → Check data integrity → Run check. Paste the result: it lists counts and short names, no full addresses."
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else (optional)
+      description: An error from `brave://extensions` → SpaceDock → Errors, or a screenshot with nothing private in it.
+  - type: checkboxes
+    id: private-safe
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked that this report contains no private URLs, backups, tokens or personal information.
+          required: true
